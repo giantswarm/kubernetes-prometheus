@@ -82,7 +82,7 @@ data:
                 "steppedLine": false,
                 "targets": [
                     {
-                        "expr": "sum(rate(coredns_dns_request_count_total{instance=~\"$instance\"}[5m])) by (proto)",
+                        "expr": "sum(rate({__name__=~"coredns_dns_requests_total|coredns_dns_request_count_total",instance=~\"$instance\"}[5m])) by (proto)",
                         "format": "time_series",
                         "intervalFactor": 2,
                         "legendFormat": "{{`{{proto}}`}}",
@@ -90,7 +90,7 @@ data:
                         "step": 60
                     },
                     {
-                        "expr": "sum(rate(coredns_dns_request_count_total{instance=~\"$instance\"}[5m]))",
+                        "expr": "sum(rate({__name__=~"coredns_dns_requests_total|coredns_dns_request_count_total",instance=~\"$instance\"}[5m]))",
                         "format": "time_series",
                         "intervalFactor": 2,
                         "legendFormat": "total",
@@ -275,14 +275,14 @@ data:
                 "steppedLine": false,
                 "targets": [
                     {
-                        "expr": "sum(rate(coredns_dns_request_count_total{instance=~\"$instance\"}[5m])) by (zone)",
+                        "expr": "sum(rate({__name__=~"coredns_dns_requests_total|coredns_dns_request_count_total",instance=~\"$instance\"}[5m])) by (zone)",
                         "intervalFactor": 2,
                         "legendFormat": "{{`{{zone}}`}}",
                         "refId": "A",
                         "step": 60
                     },
                     {
-                        "expr": "sum(rate(coredns_dns_request_count_total{instance=~\"$instance\"}[5m]))",
+                        "expr": "sum(rate({__name__=~"coredns_dns_requests_total|coredns_dns_request_count_total",instance=~\"$instance\"}[5m]))",
                         "intervalFactor": 2,
                         "legendFormat": "total",
                         "refId": "B",
@@ -372,14 +372,14 @@ data:
                 "steppedLine": false,
                 "targets": [
                     {
-                        "expr": "sum(rate(coredns_dns_request_do_count_total{instance=~\"$instance\"}[5m]))",
+                        "expr": "sum(rate({__name__=~"coredns_dns_do_requests_total|coredns_dns_request_do_count_total", instance=~\"$instance\"}[5m]))",
                         "intervalFactor": 2,
                         "legendFormat": "DO",
                         "refId": "A",
                         "step": 40
                     },
                     {
-                        "expr": "sum(rate(coredns_dns_request_count_total{instance=~\"$instance\"}[5m]))",
+                        "expr": "sum(rate({__name__=~"coredns_dns_requests_total|coredns_dns_request_count_total",instance=~\"$instance\"}[5m]))",
                         "intervalFactor": 2,
                         "legendFormat": "total",
                         "refId": "B",
@@ -688,7 +688,7 @@ data:
                 "steppedLine": false,
                 "targets": [
                     {
-                        "expr": "sum(rate(coredns_dns_response_rcode_count_total{instance=~\"$instance\"}[5m])) by (rcode)",
+                        "expr": "sum(rate({__name__=~"coredns_dns_responses_total|coredns_dns_response_rcode_count_total", instance=~\"$instance\"}[5m])) by (rcode)",
                         "intervalFactor": 2,
                         "legendFormat": "{{`{{rcode}}`}}",
                         "refId": "A",
@@ -1112,7 +1112,7 @@ data:
                 "steppedLine": false,
                 "targets": [
                     {
-                        "expr": "sum(coredns_cache_size{instance=~\"$instance\"}) by (type)",
+                        "expr": "sum({__name__=~"coredns_cache_entries|coredns_cache_size", instance=~\"$instance\"}) by (type)",
                         "intervalFactor": 2,
                         "legendFormat": "{{`{{type}}`}}",
                         "refId": "A",

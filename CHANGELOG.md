@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Added
+
+- Add support for `coredns` metric names for version 1.7.0 and above.
+
 ## [0.6.0] - 2021-01-25
 
 ### Changed
